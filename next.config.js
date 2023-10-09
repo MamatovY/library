@@ -2,7 +2,7 @@
 const nextConfig = {
     images: {
         formats: ['image/avif', 'image/webp'],
-        domains: ['i.imgur.com'],
+        // domains: ['i.imgur.com'],
     },
 }
 
