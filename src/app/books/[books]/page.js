@@ -18,10 +18,15 @@ const Books = async ({ params }) => {
 
     return (
         <div className='books'>
-            <div>
-                {query}
+
+            <div className='text-slate-100 font-bold border-b-2 text-lg text-right py-2'>
+                <div className="container">
+                    Найдено: {books.totalItems}
+                </div>
             </div>
-            <BooksList books={books} query={query} />
+            <div className="container mt-6">
+                <BooksList books={books} query={query} />
+            </div>
         </div>
     )
 }
