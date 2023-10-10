@@ -26,11 +26,11 @@ const BooksList = ({ books, query }) => {
         setOffset(offset + 30)
         setLoading(false)
     }
-
+    console.log(data);
     return (
         <>
             <div className="flex flex-wrap justify-center gap-6" >
-                {data.map((item, i) => {
+                {data?.map((item, i) => {
                     return (
                         <BookItem item={item} key={i} />
                     )

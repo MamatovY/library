@@ -17,8 +17,7 @@ const Books = async ({ params }) => {
     const books = await getAllBooks(query)
 
     return (
-        <div className='books'>
-
+        <main>
             <div className='text-slate-100 font-bold border-b-2 text-lg text-right py-2'>
                 <div className="container">
                     Найдено: {books.totalItems}
@@ -27,7 +26,7 @@ const Books = async ({ params }) => {
             <div className="container mt-6">
                 <BooksList books={books} query={query} />
             </div>
-        </div>
+        </main>
     )
 }
 

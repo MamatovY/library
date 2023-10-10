@@ -5,7 +5,7 @@ const LoadMore = ({ handleMore, loading }) => {
     return (
         <>
             {
-                loading ? <Loader />
+                loading ? <Loader className='mt-5 w-[3rem] h-[3rem]' />
                     :
                     <div onClick={handleMore} className='text-2xl underline cursor-pointer text-center mt-5'>
                         Load more

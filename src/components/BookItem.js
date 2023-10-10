@@ -1,5 +1,6 @@
 import Link from "next/link"
 import skeleton from '@/assets/img/skeleton.jpg'
+import Image from "next/image"
 
 const BookItem = ({ item }) => {
     const img = item?.volumeInfo?.imageLinks?.thumbnail ? item?.volumeInfo?.imageLinks?.thumbnail : skeleton
@@ -9,7 +10,7 @@ const BookItem = ({ item }) => {
             style={{ background: '#FFF' }}
             href={`/book/${item?.id}`}>
 
-            <img src={img} alt="" className="rounded-xl w-full object-cover h-[17rem]" />
+            <Image width={100} height={100} src={img} alt="" className="rounded-xl w-full object-cover h-[17rem]" />
             <div className="font-bold">
                 {item?.volumeInfo?.title}
             </div>
