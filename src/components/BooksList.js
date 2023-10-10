@@ -1,7 +1,7 @@
 'use client'
 import Link from "next/link"
-import LoadMore from "../LoadMore/LoadMore"
-import { useEffect, useState } from "react"
+import LoadMore from "./LoadMore"
+import { useState } from "react"
 import { __apiBase, __apiKey } from '@/api'
 
 const getAllBooks = async (params, offset) => {

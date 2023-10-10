@@ -1,7 +1,5 @@
 import { __apiBase, __apiKey } from '@/api'
-import BooksList from '@/components/BooksList/BooksList'
-import LoadMore from '@/components/LoadMore/LoadMore'
-import Link from "next/link"
+import BooksList from '@/components/BooksList'
 
 const getAllBooks = async (params) => {
     const url = `${__apiBase}?${params}&${__apiKey}`
