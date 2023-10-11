@@ -1,3 +1,4 @@
+//Специально добавил api ключ локально а не в .env.local
 import { __apiBase, __apiKey } from "@/api";
 
 export const getAllBooks = async (params, offset) => {
