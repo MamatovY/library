@@ -1,12 +1,14 @@
-import { __apiBase, __apiKey } from '@/api'
+import { getBook } from '@/service';
 import Image from 'next/image'
 
-const getBook = async (id) => {
-    const url = `${__apiBase}/${id}?${__apiKey}`
-    // https://www.googleapis.com/books/v1/volumes/J89cEAAAQBAJ?key=AIzaSyA9ESmiBbNEK5a7Xmg485w2GgUIcwQwcDo
-    const res = await fetch(url)
-    const book = await res.json()
-    return book
+
+export async function generateMetadata({ params }) {
+    const book = await getBook(params.id)
+
+
+    return {
+        title: book.volumeInfo.title
+    }
 }
 
 // изображение обложки, название, все категории, все авторы, описание.

@@ -1,20 +1,16 @@
-import { __apiBase, __apiKey } from '@/api'
 import BooksList from '@/components/BooksList'
+import { getAllBooks } from '@/service'
 
-const getAllBooks = async (params) => {
-    const url = `${__apiBase}?${params}&${__apiKey}`
-    //https://www.googleapis.com/books/v1/volumes?q=react+subject:art&orderBy=relevance&key=AIzaSyA9ESmiBbNEK5a7Xmg485w2GgUIcwQwcDo
-    console.log(url);
-    const res = await fetch(url)
-    const books = await res.json()
-    return books
 
+export const metadata = {
+    title: 'Books result'
 }
+
 
 const Books = async ({ params }) => {
     //Получение декодированный URL
     const query = decodeURIComponent(params.books)
-    const books = await getAllBooks(query)
+    const books = await getAllBooks(query, 0)
 
     return (
         <main>
