@@ -15,19 +15,21 @@ const BookPage = async ({ params }) => {
     const img = book?.volumeInfo?.imageLinks?.thumbnail ? book?.volumeInfo?.imageLinks?.thumbnail : skeleton
     console.log(img);
     return (
-        <main className='container'>
-            <Image width={100} height={100} src={img} alt="" className="rounded-xl w-full object-cover h-[17rem]" />
-            <div className="font-bold">
-                {book?.volumeInfo?.title}
+        <main className='container mt-10 gap-6'>
+            <Image width={100} height={100} src={img} alt="" className="rounded-xl w-[16rem] md:w-[20rem] mx-auto sm:mx-0 sm:float-left sm:mr-5 mb-5" />
+            <div>
+                <div className="font-bold text-xl sm:text-2xl">
+                    {book?.volumeInfo?.title}
+                </div>
+                <div className="my-5">
+                    <span className='font-bold'>Category:</span> {book?.volumeInfo?.categories?.join(', ')}
+                </div>
+                <div className="mb-5">
+                    <span className='font-bold'>Authors:</span> {book?.volumeInfo?.authors?.join(', ')}
+                </div>
+                {/* Для того чтобы если из бекенда приходят HTML теги можно было их выводить как HTML элемент */}
+                <div className="text-sm sm:text-base" dangerouslySetInnerHTML={{ __html: book?.volumeInfo?.description }}></div>
             </div>
-            <div className="text-xs my-1">
-                Category: {book?.volumeInfo?.categories?.join(', ')}
-            </div>
-            <div className="text-xs">
-                Authors: {book?.volumeInfo?.authors?.join(', ')}
-            </div>
-            {/* Для того чтобы если из бекенда приходят HTML теги можно было их выводить как HTML элемент */}
-            <div className="text-xs" dangerouslySetInnerHTML={{ __html: book?.volumeInfo?.description }}></div>
         </main>
     )
 }
